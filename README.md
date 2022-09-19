@@ -1,4 +1,3 @@
 # spring-drop
 
-cd example
-bash run.sh
+cd example && bash run.sh
