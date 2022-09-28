@@ -6,6 +6,7 @@ import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import lombok.Builder;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 
@@ -36,3 +37,4 @@ public class ExampleApp extends Application<Configuration> {
         new ExampleApp().run(args);
     }
 }
+
