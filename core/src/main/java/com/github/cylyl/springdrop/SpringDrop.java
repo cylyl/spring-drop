@@ -49,10 +49,13 @@ public class SpringDrop<T extends Configuration>  {
         this.context = configurableApplicationContext;
     }
 
-    public void initial(io.dropwizard.Configuration c, Environment e, String coonfigLocation, String... basePackages ) {
+    public ServletRegistration.Dynamic createDispatcher(io.dropwizard.Configuration c,
+                                                        Environment e,
+                                                        String configLocation,
+                                                        String... basePackages ) {
 
         AnnotationConfigWebApplicationContext context = (AnnotationConfigWebApplicationContext) this.context;
-        context.setConfigLocation(coonfigLocation);
+        context.setConfigLocation(configLocation);
         context.scan(basePackages);
         e.servlets().addServletListeners((new ContextLoaderListener(context)));
         ServletRegistration.Dynamic dispatcher = e.servlets().addServlet("SpringDispatcherServlet", new DispatcherServlet(context){
@@ -69,6 +72,8 @@ public class SpringDrop<T extends Configuration>  {
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/sd/*");
         LOG.info("Default Spring mapping contect is : \"/sd/*\"");
+
+        return dispatcher;
     }
 
     private void initial(Object configuration, Environment environment) throws Exception {

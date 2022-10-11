@@ -11,14 +11,17 @@
   <properties>
     <dropwizard.version>2.1.2</dropwizard.version>
     <spring.version>5.3.22</spring.version>
+    <spring-boot.version>2.7.3</spring-boot.version>
     <lombok.version>1.18.24</lombok.version>
+    <h2.version>2.1.214</h2.version>
+    <hibernate.manager>5.4.0.Final</hibernate.manager>
   </properties>
 
   <dependencies>
 
     <dependency>
       <groupId>com.github.cylyl</groupId>
-      <artifactId>spring-drop</artifactId>
+      <artifactId>core</artifactId>
       <version>0.0.1</version>
       <scope>compile</scope>
     </dependency>
@@ -37,17 +40,35 @@
     </dependency>
 
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>${spring.version}</version>
-      <optional>true</optional>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>${spring-boot.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <version>${spring-boot.version}</version>
+    </dependency>
+
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.boot</groupId>-->
+<!--      <artifactId>spring-boot-autoconfigure</artifactId>-->
+<!--      <version>${spring-boot.version}</version>-->
+<!--    </dependency>-->
 
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>${lombok.version}</version>
       <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>${h2.version}</version>
+      <scope>runtime</scope>
     </dependency>
 
     <dependency>
