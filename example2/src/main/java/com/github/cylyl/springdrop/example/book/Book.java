@@ -12,6 +12,10 @@ public class Book {
     private Long id;
     private String name;
 
+    public Long getId() {
+        return id;
+    }
+
     // standard constructors
 
     // standard getters and setters

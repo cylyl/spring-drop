@@ -8,7 +8,8 @@
   <modules>
     <module>core</module>
     <module>account</module>
-      <module>data</module>
+    <module>data</module>
+    <module>common</module>
   </modules>
   <name>spring-drop</name>
   <url>https://github.com/cylyl/spring-drop</url>
@@ -19,6 +20,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <guava.version>31.1-jre</guava.version>
     <lombok.version>1.18.24</lombok.version>
+    <spring-boot.version>2.7.3</spring-boot.version>
   </properties>
 
   <dependencies>
@@ -85,12 +87,16 @@
       <artifactId>cglib-nodep</artifactId>
       <version>3.3.0</version>
     </dependency>
-      <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-autoconfigure</artifactId>
-          <version>2.7.4</version>
-      </dependency>
-
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
+      <version>${spring-boot.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <version>${spring-boot.version}</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
