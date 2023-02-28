@@ -2,16 +2,23 @@ package com.github.cylyl.springdrop.account;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.UniqueConstraint;
 
 @Builder
 @Entity
 public class Account {
+
+    public Account() {
+
+    }
+
+    public Account(Long id, String username) {
+        this.id = id;
+        this.username = username;
+    }
 
     @Id
     @GeneratedValue
